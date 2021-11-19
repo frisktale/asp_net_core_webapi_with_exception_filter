@@ -6,8 +6,8 @@
         opt=>opt.Filters.Add(typeof(ExceptionFilter))
     );
     ```
-    这种方法添加会将异常处理应用到所有的Controller
-    见Program 地8行
+    这种方法添加会将异常处理应用到所有的Controller  
+    见Program 第八行
 1. 将Attribute添加到Controller上
     ```csharp
     [TypeFilter(typeof(ExceptionFilter))]
