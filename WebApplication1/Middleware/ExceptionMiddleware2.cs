@@ -15,7 +15,7 @@ namespace WebApplication1.Middleware
             _next = next;
             _logger = logger;
         }
-        public async Task Invoke(HttpContext httpContext)
+        public async Task InvokeAsync(HttpContext httpContext)
         {
             try
             {
