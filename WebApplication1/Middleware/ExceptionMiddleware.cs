@@ -15,7 +15,6 @@ namespace WebApplication1.Middleware
 
             if (ex != null)
             {
-
                 using var scope = httpContext.RequestServices.CreateScope();
 
                 var logger = scope.ServiceProvider.GetRequiredService<ILogger<ExceptionMiddleware>>();

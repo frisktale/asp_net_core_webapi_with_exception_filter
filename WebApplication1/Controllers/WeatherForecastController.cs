@@ -33,7 +33,7 @@ namespace WebApplication1.Controllers
         [HttpGet(Name = "ExceptionTest")]
         public IEnumerable<WeatherForecast> ExceptionTest()
         {
-            throw new Exception("Òì³£²âÊÔ");
+            throw new Exception("å¼‚å¸¸æµ‹è¯•");
         }
     }
 }
