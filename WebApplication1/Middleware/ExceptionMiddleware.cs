@@ -30,6 +30,7 @@ namespace WebApplication1.Middleware
                 };
 
                 var stream = httpContext.Response.Body;
+                httpContext.Response.StatusCode = StatusCodes.Status200OK;
                 await JsonSerializer.SerializeAsync(stream, problem);
             }
         }

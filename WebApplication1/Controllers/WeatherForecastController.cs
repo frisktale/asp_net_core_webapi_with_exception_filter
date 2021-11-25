@@ -31,9 +31,21 @@ namespace WebApplication1.Controllers
         }
 
         [HttpGet(Name = "ExceptionTest")]
-        public IEnumerable<WeatherForecast> ExceptionTest()
+        public IEnumerable<WeatherForecast> ExceptionTest(int inputId)
         {
-            throw new Exception("异常测试");
+
+            if (inputId<10)
+            {
+                throw new Exception("id违法");
+
+            }
+            return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+            {
+                Date = DateTime.Now.AddDays(index),
+                TemperatureC = Random.Shared.Next(-20, 55),
+                Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+            })
+            .ToArray();
         }
     }
 }

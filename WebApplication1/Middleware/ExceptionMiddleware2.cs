@@ -36,6 +36,8 @@ namespace WebApplication1.Middleware
                     Title = title
                 };
 
+                httpContext.Response.StatusCode = StatusCodes.Status200OK;
+
                 //Serialize the problem details object to the Response as JSON (using System.Text.Json)
                 var stream = httpContext.Response.Body;
                 await JsonSerializer.SerializeAsync(stream, problem);
