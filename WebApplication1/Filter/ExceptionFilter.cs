@@ -13,7 +13,7 @@ namespace WebApplication1.Filter
 
         public Task OnExceptionAsync(ExceptionContext context)
         {
-            _logger.LogInformation("{message}\t{trace}",context.Exception.Message,context.Exception.StackTrace);
+            _logger.LogError("{message}\t{trace}",context.Exception.Message,context.Exception.StackTrace);
             context.Result = new ContentResult
             {
                 Content = JsonSerializer.Serialize(new { context.Exception.Message }),
