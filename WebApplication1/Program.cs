@@ -5,7 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 
 builder.Services.AddControllers(
-    opt=>opt.Filters.Add(typeof(ExceptionFilter))
+    opt =>
+    {
+        opt.Filters.Add(typeof(ExceptionFilter));
+        opt.Filters.Add(typeof(MyResultFilter));
+    }
 );
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

@@ -7,9 +7,13 @@
     );
     ```
     这种方法添加会将异常处理应用到所有的Controller  
-    见Program 第八行
+    见Program 第10行  
 1. 将Attribute添加到Controller上
     ```csharp
     [TypeFilter(typeof(ExceptionFilter))]
     ```
-    见WeatherForecastController第八行
+    见WeatherForecastController第8行
+
+# 统一返回值
+定义`MyResultFilter` 后，添加到全局Filters中  
+    见Program 第11行 
