@@ -11,7 +11,7 @@ namespace WebApplication1.Filter
 
         public ExceptionFilter(ILogger<ExceptionFilter> logger) => (_logger) = (logger);
 
-        public Task OnExceptionAsync(ExceptionContext context)
+        public async Task OnExceptionAsync(ExceptionContext context)
         {
             _logger.LogError("{message}\t{trace}",context.Exception.Message,context.Exception.StackTrace);
             context.Result = new ContentResult
@@ -21,7 +21,6 @@ namespace WebApplication1.Filter
                 ContentType = MediaTypeNames.Application.Json
             };
             context.ExceptionHandled = true;
-            return Task.CompletedTask;
         }
     }
 }
