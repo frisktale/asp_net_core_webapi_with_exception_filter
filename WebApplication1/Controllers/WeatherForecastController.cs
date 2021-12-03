@@ -32,6 +32,21 @@ namespace WebApplication1.Controllers
             .ToArray();
         }
 
+
+        [HttpGet]
+        public IActionResult GetWithOk()
+        {
+            return this.Ok(
+                Enumerable.Range(1, 5).Select(index => new WeatherForecast
+                {
+                    Date = DateTime.Now.AddDays(index),
+                    TemperatureC = Random.Shared.Next(-20, 55),
+                    Summary = Summaries[Random.Shared.Next(Summaries.Length)]
+                })
+                .ToArray()
+            );
+        }
+
         [HttpGet(Name = "ExceptionTest")]
         public IEnumerable<WeatherForecast> ExceptionTest()
         {
