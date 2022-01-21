@@ -1,4 +1,4 @@
-using Microsoft.AspNetCore.Mvc;
+ï»¿using Microsoft.AspNetCore.Mvc;
 using WebApplication1.Filter;
 
 namespace WebApplication1.Controllers
@@ -50,7 +50,7 @@ namespace WebApplication1.Controllers
         [HttpGet(Name = "ExceptionTest")]
         public IEnumerable<WeatherForecast> ExceptionTest()
         {
-            throw new Exception("Òì³£²âÊÔ");
+            throw new NotImplementedException("å¼‚å¸¸æµ‹è¯•");
         }
     }
 }
